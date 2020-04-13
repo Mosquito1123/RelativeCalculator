@@ -1,24 +1,309 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="88d-B1-Sdn">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Home View Controller-->
+        <scene sceneID="juv-lB-s5N">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="8h5-Fb-CX9" customClass="HomeViewController" customModule="RelationshipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w6f-zp-rzD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="upk-kH-Mj3">
+                                <rect key="frame" x="20" y="407" width="374" height="347"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Bq-L6-Xyc">
+                                        <rect key="frame" x="0.0" y="90.5" width="72.5" height="166"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dcl-oP-d1z" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="父"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="Zqd-ez-6pA"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKs-S1-k4N" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="90.5" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="母"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="Hg3-5o-Ryp"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="xKs-S1-k4N" firstAttribute="height" secondItem="dcl-oP-d1z" secondAttribute="height" id="bRr-Yw-Oxm"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8Pa-zs-Uzs">
+                                        <rect key="frame" x="100.5" y="0.0" width="72.5" height="347"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUq-81-Rrt" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="0.0" width="72" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="夫"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="Sge-Jr-Jqg"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-rY-uVl" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="90.5" width="72" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="妻"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="Drt-AZ-LBN"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-zV-hVL" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="181" width="72" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="子"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="9yz-fu-iT8"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21z-Ks-t3e" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="271.5" width="72" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="女"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="QZJ-J1-01B"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="P6m-zV-hVL" firstAttribute="height" secondItem="gUq-81-Rrt" secondAttribute="height" id="8s4-1s-eTL"/>
+                                            <constraint firstItem="8fb-rY-uVl" firstAttribute="height" secondItem="gUq-81-Rrt" secondAttribute="height" id="AKK-SQ-2fp"/>
+                                            <constraint firstItem="21z-Ks-t3e" firstAttribute="height" secondItem="gUq-81-Rrt" secondAttribute="height" id="Dbe-Be-Eqs"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3QQ-Ed-pbb">
+                                        <rect key="frame" x="201" y="0.0" width="72.5" height="347"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qq0-gy-EtF" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="兄"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="r84-pH-BGr"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZMe-Gt-dej" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="90.5" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="弟"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="BbE-sc-iHm"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5A-FG-2ux" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="181" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="姐"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="IX5-sg-QmB"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-JA-d0K" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="271.5" width="72.5" height="75.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="妹"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="Tag-9m-RLH"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="c5A-FG-2ux" firstAttribute="height" secondItem="qq0-gy-EtF" secondAttribute="height" id="UqD-76-rmg"/>
+                                            <constraint firstItem="XDc-JA-d0K" firstAttribute="height" secondItem="qq0-gy-EtF" secondAttribute="height" id="oii-vt-ZYR"/>
+                                            <constraint firstItem="ZMe-Gt-dej" firstAttribute="height" secondItem="qq0-gy-EtF" secondAttribute="height" id="pMr-3a-mht"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eUC-4B-X8f">
+                                        <rect key="frame" x="301.5" y="0.0" width="72.5" height="347"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vko-3d-z1h" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="0.0" width="72" height="75.5"/>
+                                                <color key="backgroundColor" red="0.92941176469999998" green="0.62745098040000002" blue="0.5450980392" alpha="0.58027068660000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="CE"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapFunctionKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="d0R-uH-RSC"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fek-Ig-OLI" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="90.5" width="72" height="75.5"/>
+                                                <color key="backgroundColor" red="0.92941176469999998" green="0.62745098040000002" blue="0.5450980392" alpha="0.58027068660000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="text" value="AC"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapFunctionKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="gF3-Yf-DiK"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsE-fw-5c8" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="181" width="72" height="75.5"/>
+                                                <color key="backgroundColor" red="0.92941176469999998" green="0.62745098040000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="Convert"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapFunctionKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="eFM-10-AvS"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-kJ-nEx" customClass="CalculatorButton" customModule="relationship" customModuleProvider="target">
+                                                <rect key="frame" x="0.5" y="271.5" width="72" height="75.5"/>
+                                                <color key="backgroundColor" red="0.92941176469999998" green="0.62745098040000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="equal"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="tapFunctionKeyAction:" destination="8h5-Fb-CX9" eventType="touchUpInside" id="WJa-Lb-1pR"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="fek-Ig-OLI" firstAttribute="height" secondItem="vko-3d-z1h" secondAttribute="height" id="84y-DY-qJI"/>
+                                            <constraint firstItem="ogX-kJ-nEx" firstAttribute="height" secondItem="dsE-fw-5c8" secondAttribute="height" id="8m4-2D-dvy"/>
+                                            <constraint firstItem="ogX-kJ-nEx" firstAttribute="height" secondItem="vko-3d-z1h" secondAttribute="height" id="9ls-5M-ncK"/>
+                                            <constraint firstItem="dsE-fw-5c8" firstAttribute="height" secondItem="vko-3d-z1h" secondAttribute="height" id="uke-NP-3N7"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qq0-gy-EtF" firstAttribute="height" secondItem="gUq-81-Rrt" secondAttribute="height" id="0Yh-G9-FLH"/>
+                                    <constraint firstItem="eUC-4B-X8f" firstAttribute="width" secondItem="3QQ-Ed-pbb" secondAttribute="width" id="KKM-fh-add"/>
+                                    <constraint firstItem="3QQ-Ed-pbb" firstAttribute="width" secondItem="8Pa-zs-Uzs" secondAttribute="width" id="Tw8-yd-UZV"/>
+                                    <constraint firstItem="vko-3d-z1h" firstAttribute="height" secondItem="XDc-JA-d0K" secondAttribute="height" id="f5R-zr-KKY"/>
+                                    <constraint firstItem="8Pa-zs-Uzs" firstAttribute="width" secondItem="0Bq-L6-Xyc" secondAttribute="width" id="ra1-FB-kVI"/>
+                                    <constraint firstItem="gUq-81-Rrt" firstAttribute="height" secondItem="dcl-oP-d1z" secondAttribute="height" id="wgB-VJ-y9h"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTN-T3-9dU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自己" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ed-PQ-DO2">
+                                        <rect key="frame" x="15" y="330" width="384" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6G-G9-Urs">
+                                        <rect key="frame" x="15" y="314" width="384" height="1"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cUQ-KO-bNf"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="??????????" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDu-R2-G1l">
+                                        <rect key="frame" x="15" y="263.5" width="384" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rDu-R2-G1l" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TTN-T3-9dU" secondAttribute="top" constant="15" id="5Zt-pK-mUL"/>
+                                    <constraint firstAttribute="trailing" secondItem="6ed-PQ-DO2" secondAttribute="trailing" constant="15" id="FkB-Cp-V70"/>
+                                    <constraint firstItem="rDu-R2-G1l" firstAttribute="trailing" secondItem="6ed-PQ-DO2" secondAttribute="trailing" id="Fle-R8-dwU"/>
+                                    <constraint firstItem="j6G-G9-Urs" firstAttribute="trailing" secondItem="6ed-PQ-DO2" secondAttribute="trailing" id="Wb7-2x-AgM"/>
+                                    <constraint firstAttribute="bottom" secondItem="6ed-PQ-DO2" secondAttribute="bottom" constant="15" id="YAt-aN-b5e"/>
+                                    <constraint firstItem="6ed-PQ-DO2" firstAttribute="top" secondItem="j6G-G9-Urs" secondAttribute="bottom" constant="15" id="e89-eL-fLC"/>
+                                    <constraint firstItem="j6G-G9-Urs" firstAttribute="leading" secondItem="6ed-PQ-DO2" secondAttribute="leading" id="fCK-Te-ejs"/>
+                                    <constraint firstItem="j6G-G9-Urs" firstAttribute="top" secondItem="rDu-R2-G1l" secondAttribute="bottom" constant="23" id="fpq-nL-yXM"/>
+                                    <constraint firstItem="rDu-R2-G1l" firstAttribute="leading" secondItem="6ed-PQ-DO2" secondAttribute="leading" id="hcZ-f8-Lf5"/>
+                                    <constraint firstItem="6ed-PQ-DO2" firstAttribute="leading" secondItem="TTN-T3-9dU" secondAttribute="leading" constant="15" id="zK0-Ua-O5H"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TTN-T3-9dU" firstAttribute="top" secondItem="uyO-07-2Gb" secondAttribute="top" id="6hl-fC-WNh"/>
+                            <constraint firstItem="TTN-T3-9dU" firstAttribute="trailing" secondItem="uyO-07-2Gb" secondAttribute="trailing" id="JII-G3-1aG"/>
+                            <constraint firstItem="uyO-07-2Gb" firstAttribute="trailing" secondItem="upk-kH-Mj3" secondAttribute="trailing" constant="20" id="ZS4-0R-tc8"/>
+                            <constraint firstItem="upk-kH-Mj3" firstAttribute="leading" secondItem="uyO-07-2Gb" secondAttribute="leading" constant="20" id="bDh-xa-PRP"/>
+                            <constraint firstItem="uyO-07-2Gb" firstAttribute="bottom" secondItem="upk-kH-Mj3" secondAttribute="bottom" constant="20" id="ddS-9H-zbc"/>
+                            <constraint firstItem="upk-kH-Mj3" firstAttribute="top" secondItem="TTN-T3-9dU" secondAttribute="bottom" constant="20" id="jaE-gU-cQc"/>
+                            <constraint firstItem="TTN-T3-9dU" firstAttribute="leading" secondItem="uyO-07-2Gb" secondAttribute="leading" id="mM7-SM-ejP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uyO-07-2Gb"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZXd-0Z-17B"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="allClearBtn" destination="fek-Ig-OLI" id="02h-sf-JDd"/>
+                        <outlet property="brotherBtn" destination="qq0-gy-EtF" id="coM-C6-93G"/>
+                        <outlet property="clearEntryBtn" destination="vko-3d-z1h" id="0oT-7T-FwI"/>
+                        <outlet property="convertBtn" destination="dsE-fw-5c8" id="faW-wq-eA8"/>
+                        <outlet property="daughterBtn" destination="21z-Ks-t3e" id="PCW-MC-1Sq"/>
+                        <outlet property="enterLabel" destination="rDu-R2-G1l" id="74Q-3h-zNT"/>
+                        <outlet property="equalBtn" destination="ogX-kJ-nEx" id="aNw-sp-3g4"/>
+                        <outlet property="fatherBtn" destination="dcl-oP-d1z" id="RAW-U3-QQC"/>
+                        <outlet property="husbandBtn" destination="gUq-81-Rrt" id="aHH-RL-fdB"/>
+                        <outlet property="motherBtn" destination="xKs-S1-k4N" id="et6-Fd-za2"/>
+                        <outlet property="resultLabel" destination="6ed-PQ-DO2" id="tm9-h9-Q94"/>
+                        <outlet property="sisterBtn" destination="c5A-FG-2ux" id="hTT-kA-e0J"/>
+                        <outlet property="sonBtn" destination="P6m-zV-hVL" id="7EN-ya-UlR"/>
+                        <outlet property="wifeBtn" destination="8fb-rY-uVl" id="m42-Gu-RRU"/>
+                        <outlet property="youngerBrotherBtn" destination="ZMe-Gt-dej" id="XAs-eB-DF3"/>
+                        <outlet property="youngerSisterBtn" destination="XDc-JA-d0K" id="4mm-0a-w96"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbT-sj-3d8" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1608.8" y="77.811094452773617"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="mHu-E8-8eZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="88d-B1-Sdn" customClass="BaseNavigationController" customModule="relationship" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MTr-g9-xbA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8h5-Fb-CX9" kind="relationship" relationship="rootViewController" id="lUQ-pH-uQY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNU-jy-oBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.60000000000002" y="77.811094452773617"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Convert" width="30" height="30"/>
+        <image name="equal" width="31" height="31"/>
+    </resources>
 </document>
